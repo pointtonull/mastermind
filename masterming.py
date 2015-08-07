@@ -18,9 +18,13 @@ def get_hint(code, guess):
     return full, partial
 
 def play():
+    print "Playing with:"
+    print "base: %d (%s),  length: %d,   oportunities: %d" % (
+        BASE, CARACTERS, LENGTH, OPORTUNITIES)
     code = choice(UNIVERSE)
     for attempt in range(OPORTUNITIES):
-        guess = raw_input("Guess (%d of %d): " % (attempt + 1, OPORTUNITIES))
+        guess = raw_input("    Guess (%d of %d): " % (attempt + 1,
+            OPORTUNITIES))
         score = get_hint(code, guess)
         if score == (4, 0):
             print "You win!!!"
